@@ -13,8 +13,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #333;
+  background: #0a0e1c;
+  color: #e0e0e0;
   min-height: 100vh;
 }
 
@@ -27,14 +27,14 @@ body {
 }
 
 .box {
-  background: rgba(255, 255, 255, 0.95);
+  background: #151f2e;
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 12px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   animation: slideUp 0.5s ease;
+  border: 1px solid #2a3748;
 }
 
 @keyframes slideUp {
@@ -50,130 +50,137 @@ body {
 
 .box h2 {
   margin-bottom: 30px;
-  color: #333;
+  color: #fff;
   text-align: center;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .box input {
   width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
-  background: #f5f5f5;
-  color: #333;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 14px 16px;
+  margin: 8px 0;
+  background: #0f1a24;
+  color: #fff;
+  border: 1px solid #2a3748;
+  border-radius: 8px;
+  font-size: 15px;
   transition: all 0.3s;
 }
 
 .box input:focus {
   outline: none;
-  border-color: #667eea;
-  background: #fff;
+  border-color: #3b6ea5;
+  background: #1a2938;
 }
 
 .box input::placeholder {
-  color: #999;
+  color: #6b7a8f;
 }
 
-.button-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-button {
-  flex: 1;
-  padding: 12px;
-  background: #667eea;
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1e3b5c;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s;
+  margin-top: 20px;
+  border: 1px solid #2d4b6e;
 }
 
-button:hover {
-  background: #5a67d8;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+.login-btn:hover {
+  background: #254b70;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(30, 59, 92, 0.4);
 }
 
-button:active {
-  transform: translateY(0);
+.signup-link {
+  text-align: center;
+  margin-top: 25px;
+  color: #8a9bb5;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #4d9eff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.forum-container {
+  background: #0a0e1c;
+  min-height: 100vh;
+  color: #e0e0e0;
 }
 
 .navbar {
-  background: white;
-  padding: 8px 20px;
-  color: #333;
+  background: #151f2e;
+  padding: 12px 25px;
+  color: #e0e0e0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 2px solid #2a3748;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .navbar-brand {
-  font-size: 18px;
-  font-weight: 600;
-  animation: flashBlueWhite 2s infinite;
+  font-size: 22px;
+  font-weight: 700;
+  color: #4d9eff;
   cursor: pointer;
-}
-
-@keyframes flashBlueWhite {
-  0% {
-    color: #667eea;
-    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-  }
-  50% {
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
-  100% {
-    color: #667eea;
-    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-  }
+  text-shadow: 0 0 15px rgba(77, 158, 255, 0.5);
+  letter-spacing: 0.5px;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .profile-section {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-  padding: 3px 8px;
+  padding: 5px 12px;
   border-radius: 30px;
   transition: all 0.3s;
+  background: #1f2c3d;
+  border: 1px solid #2a3748;
 }
 
 .profile-section:hover {
-  background: #f0f2f5;
+  background: #2a3a4f;
 }
 
 .profile-pic {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #667eea;
+  border: 2px solid #3b6ea5;
   transition: all 0.3s;
 }
 
@@ -183,23 +190,23 @@ button:active {
 }
 
 .profile-pic-placeholder {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #1e3b5c, #2d4b6e);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
-  border: 2px solid white;
+  font-size: 18px;
+  border: 2px solid #3b6ea5;
 }
 
 .username-display {
   font-weight: 600;
-  color: #333;
-  font-size: 14px;
+  color: #fff;
+  font-size: 15px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -209,16 +216,17 @@ button:active {
 .online-indicator {
   display: flex;
   align-items: center;
-  gap: 5px;
-  background: #f0f2f5;
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 13px;
+  gap: 8px;
+  background: #1f2c3d;
+  padding: 6px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  border: 1px solid #2a3748;
 }
 
 .green-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: #4caf50;
   border-radius: 50%;
   animation: glow 2s ease-in-out infinite;
@@ -229,7 +237,7 @@ button:active {
     box-shadow: 0 0 5px #4caf50;
   }
   50% {
-    box-shadow: 0 0 15px #4caf50, 0 0 20px #4caf50;
+    box-shadow: 0 0 15px #4caf50, 0 0 25px #4caf50;
   }
   100% {
     box-shadow: 0 0 5px #4caf50;
@@ -237,67 +245,69 @@ button:active {
 }
 
 .online-count {
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
 }
 
 .online-text {
-  color: #666;
+  color: #8a9bb5;
 }
 
 .admin {
   background: #ff4757;
   color: white;
-  font-size: 11px;
-  padding: 2px 6px;
+  font-size: 12px;
+  padding: 3px 8px;
   border-radius: 12px;
   margin-left: 8px;
-  font-weight: normal;
+  font-weight: 600;
   animation: none;
 }
 
 /* User Tags */
 .user-tag {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 10px;
-  font-weight: 600;
-  margin-left: 5px;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 6px;
   text-transform: uppercase;
   vertical-align: middle;
   white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
 .tag-owner {
   background: #ff4757;
   color: white;
-  box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+  box-shadow: 0 0 12px rgba(255, 71, 87, 0.6);
 }
 
 .tag-developer {
   background: #9b59b6;
   color: white;
-  box-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+  box-shadow: 0 0 12px rgba(155, 89, 182, 0.6);
 }
 
 .tag-helper {
   background: #f1c40f;
   color: #333;
-  box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+  box-shadow: 0 0 12px rgba(241, 196, 15, 0.6);
 }
 
 .tag-cheat-dev {
   background: linear-gradient(135deg, #8e44ad, #9b59b6);
   color: white;
-  box-shadow: 0 0 15px rgba(142, 68, 173, 0.7);
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.8);
   border: 1px solid #f1c40f;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .tag-cheat-dev::after {
   content: " ⚡";
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* Profile Picture Modal */
@@ -308,7 +318,7 @@ button:active {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -316,14 +326,16 @@ button:active {
 }
 
 .modal-content {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
+  background: #151f2e;
+  padding: 30px;
+  border-radius: 15px;
   width: 90%;
   max-width: 500px;
   animation: modalSlideIn 0.3s ease;
   max-height: 80vh;
   overflow-y: auto;
+  border: 1px solid #2a3748;
+  color: #e0e0e0;
 }
 
 @keyframes modalSlideIn {
@@ -339,64 +351,75 @@ button:active {
 
 .modal h3 {
   margin-bottom: 20px;
-  color: #333;
+  color: #fff;
   text-align: center;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .modal .profile-preview {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin: 0 auto 15px;
+  margin: 0 auto 20px;
   display: block;
-  border: 3px solid #667eea;
+  border: 3px solid #3b6ea5;
   object-fit: cover;
 }
 
 .modal input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 14px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #2a3748;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #0f1a24;
+  color: #fff;
 }
 
 .modal input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #3b6ea5;
 }
 
 .modal-buttons {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .modal-buttons button {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
+  background: #1e3b5c;
+  border: 1px solid #2d4b6e;
+  color: white;
+  font-size: 15px;
+}
+
+.modal-buttons button:hover {
+  background: #254b70;
 }
 
 .modal-buttons button.cancel {
-  background: #ff4757;
+  background: #3d2a2a;
+  border-color: #5a3a3a;
 }
 
 .modal-buttons button.cancel:hover {
-  background: #ee3e4e;
+  background: #4f3535;
 }
 
 .avatar-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin: 15px 0;
+  gap: 12px;
+  margin: 20px 0;
 }
 
 .avatar-option {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid transparent;
@@ -409,85 +432,103 @@ button:active {
 }
 
 .avatar-option.selected {
-  border-color: #667eea;
+  border-color: #3b6ea5;
   transform: scale(1.1);
 }
 
 .categories-bar {
-  background: white;
-  padding: 8px 20px;
+  background: #151f2e;
+  padding: 15px 25px;
   display: flex;
-  gap: 10px;
-  border-bottom: 1px solid #e0e0e0;
+  gap: 15px;
+  border-bottom: 2px solid #2a3748;
   overflow-x: auto;
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .category-btn {
-  padding: 5px 15px;
-  background: #f0f2f5;
-  border: none;
-  border-radius: 20px;
-  color: #333;
-  font-size: 13px;
-  font-weight: 500;
+  padding: 10px 25px;
+  background: #1f2c3d;
+  border: 2px solid #2a3748;
+  border-radius: 30px;
+  color: #e0e0e0;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
   min-width: fit-content;
-}
-
-.category-btn:hover {
-  background: #e0e4e9;
-  transform: translateY(-2px);
-}
-
-.category-btn.active {
-  background: #667eea;
-  color: white;
-}
-
-.category-info {
-  background: #fff3cd;
-  color: #856404;
-  padding: 6px 20px;
-  font-size: 13px;
-  border-bottom: 1px solid #ffeeba;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.3px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+.category-btn:hover {
+  background: #2a3a4f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border-color: #3b6ea5;
+}
+
+.category-btn.active {
+  background: #1e3b5c;
+  border-color: #4d9eff;
+  color: white;
+  box-shadow: 0 0 15px rgba(77, 158, 255, 0.3);
+}
+
+.category-btn .emoji {
+  font-size: 18px;
+}
+
+.category-info {
+  background: #1e2a36;
+  color: #a0b8d0;
+  padding: 10px 25px;
+  font-size: 14px;
+  border-bottom: 1px solid #2a3748;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
 .category-info i {
   font-style: normal;
-  background: #856404;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 12px;
-  font-size: 11px;
+  background: #2a3748;
+  color: #a0b8d0;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .messages {
-  padding: 15px;
-  height: calc(100vh - 165px);
+  padding: 20px;
+  height: calc(100vh - 210px);
   overflow-y: auto;
-  background: #f5f7fa;
+  background: #0f1622;
 }
 
 .message {
-  background: white;
-  padding: 8px 12px;
-  margin-bottom: 8px;
+  background: #1a2433;
+  padding: 15px 18px;
+  margin-bottom: 12px;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease;
-  max-width: 85%;
+  max-width: 90%;
   display: flex;
-  gap: 8px;
+  gap: 12px;
+  border: 1px solid #2a3748;
+  border-left: 4px solid #3b6ea5;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -496,25 +537,25 @@ button:active {
 }
 
 .message-avatar {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #667eea;
+  border: 2px solid #3b6ea5;
 }
 
 .message-avatar-placeholder {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #1e3b5c, #2d4b6e);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
-  border: 2px solid white;
+  font-size: 20px;
+  border: 2px solid #3b6ea5;
 }
 
 .message-content-wrapper {
@@ -525,33 +566,34 @@ button:active {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 2px;
+  gap: 8px;
+  margin-bottom: 5px;
 }
 
 .message strong {
-  color: #667eea;
-  font-size: 14px;
+  color: #4d9eff;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .message-content {
-  color: #444;
-  font-size: 14px;
-  line-height: 1.4;
+  color: #e0e0e0;
+  font-size: 15px;
+  line-height: 1.5;
   word-wrap: break-word;
   white-space: pre-wrap;
   font-family: inherit;
-  background: #f8f9fa;
-  padding: 6px 8px;
-  border-radius: 6px;
-  border-left: 2px solid #667eea;
+  background: #0f1a24;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #3b6ea5;
 }
 
 .message-content a {
-  color: #667eea;
+  color: #4d9eff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .message-content a:hover {
@@ -560,34 +602,35 @@ button:active {
 
 .status-indicator {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  margin-right: 3px;
+  margin-right: 4px;
 }
 
 .status-online {
   background-color: #4caf50;
-  box-shadow: 0 0 8px #4caf50;
+  box-shadow: 0 0 10px #4caf50;
 }
 
 .status-updating {
   background-color: #ff9800;
-  box-shadow: 0 0 8px #ff9800;
+  box-shadow: 0 0 10px #ff9800;
 }
 
 .status-detected {
   background-color: #f44336;
-  box-shadow: 0 0 8px #f44336;
+  box-shadow: 0 0 10px #f44336;
 }
 
 .message-image {
   max-width: 100%;
-  max-height: 200px;
-  border-radius: 8px;
-  margin-top: 5px;
+  max-height: 250px;
+  border-radius: 10px;
+  margin-top: 8px;
   cursor: pointer;
   transition: transform 0.3s;
+  border: 1px solid #2a3748;
 }
 
 .message-image:hover {
@@ -595,14 +638,14 @@ button:active {
 }
 
 .message-time {
-  font-size: 10px;
-  color: #999;
-  margin-top: 3px;
+  font-size: 11px;
+  color: #8a9bb5;
+  margin-top: 5px;
   text-align: right;
 }
 
 .message.owner-message {
-  border-left: 3px solid #ff4757;
+  border-left: 4px solid #ff4757;
 }
 
 .message.owner-message .message-header strong {
@@ -610,70 +653,78 @@ button:active {
 }
 
 .message.system-message {
-  background: #f8f9fa;
-  border-left: 3px solid #6c757d;
+  background: #1a2433;
+  border-left: 4px solid #6c757d;
 }
 
 .message.system-message .message-header strong {
-  color: #6c757d;
+  color: #8a9bb5;
 }
 
 .message.locked-message {
   opacity: 0.7;
-  background: #f8f9fa;
+  background: #1a2433;
 }
 
 .message.locked-message::before {
   content: "🔒";
   margin-right: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .input-area {
   display: flex;
-  padding: 10px 15px;
-  background: white;
-  border-top: 1px solid #e0e0e0;
+  padding: 15px 20px;
+  background: #151f2e;
+  border-top: 2px solid #2a3748;
   position: sticky;
   bottom: 0;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
 }
 
 .input-area input[type="text"] {
   flex: 1;
-  padding: 8px 12px;
-  background: #f5f5f5;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 12px 15px;
+  background: #0f1a24;
+  border: 2px solid #2a3748;
+  border-radius: 10px;
+  font-size: 15px;
   transition: all 0.3s;
+  color: #e0e0e0;
 }
 
 .input-area input[type="text"]:focus {
   outline: none;
-  border-color: #667eea;
-  background: #fff;
+  border-color: #3b6ea5;
+  background: #1a2938;
+  box-shadow: 0 0 10px rgba(59, 110, 165, 0.3);
 }
 
 .input-area input[type="text"]:disabled {
-  background: #e9ecef;
+  background: #1a2433;
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .upload-btn {
-  background: #4caf50;
-  padding: 8px 15px;
+  background: #1e3b5c;
+  padding: 12px 20px;
   min-width: auto;
-  font-size: 14px;
+  font-size: 15px;
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
+  border: 2px solid #2d4b6e;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
 }
 
 .upload-btn:hover {
-  background: #45a049;
+  background: #254b70;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 59, 92, 0.4);
 }
 
 .upload-btn input {
@@ -682,34 +733,41 @@ button:active {
 
 .input-area button {
   flex: 0;
-  min-width: 70px;
-  padding: 8px 12px;
-  font-size: 14px;
-  background: #667eea;
+  min-width: 90px;
+  padding: 12px 15px;
+  font-size: 15px;
+  background: #1e3b5c;
+  border: 2px solid #2d4b6e;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.input-area button:hover {
+  background: #254b70;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 59, 92, 0.4);
 }
 
 .input-area button:disabled {
-  background: #a0a0a0;
+  background: #2a3748;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+  border-color: #3a4758;
 }
 
 .loading {
   text-align: center;
-  color: #999;
-  padding: 15px;
-  font-size: 14px;
-}
-
-#messageContainer {
-  display: flex;
-  flex-direction: column;
+  color: #8a9bb5;
+  padding: 20px;
+  font-size: 15px;
 }
 
 .own-message {
   align-self: flex-end;
-  background: #667eea;
+  background: #1e3b5c;
+  border-left: 4px solid #fff;
 }
 
 .own-message .message-avatar {
@@ -722,7 +780,7 @@ button:active {
 
 .own-message .message-content {
   color: white;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-left-color: white;
 }
 
@@ -732,38 +790,48 @@ button:active {
 
 .navbar button {
   flex: 0;
-  min-width: 70px;
-  padding: 6px 12px;
-  font-size: 13px;
-  background: #ff4757;
+  min-width: 80px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background: #3d2a2a;
+  border: 2px solid #5a3a3a;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
 .navbar button:hover {
-  background: #ee3e4e;
+  background: #4f3535;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(61, 42, 42, 0.4);
 }
 
 .category-badge {
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 12px;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 15px;
   margin-left: 5px;
-  background: #e0e0e0;
-  color: #666;
+  background: #2a3748;
+  color: #8a9bb5;
+  font-weight: 600;
 }
 
 .category-badge.news {
   background: #ff4757;
   color: white;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
 }
 
 .category-badge.menus {
   background: #4caf50;
   color: white;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
 }
 
 .category-badge.general {
-  background: #667eea;
+  background: #3b6ea5;
   color: white;
+  box-shadow: 0 0 10px rgba(59, 110, 165, 0.5);
 }
 
 /* Image Preview Modal */
@@ -774,7 +842,7 @@ button:active {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   z-index: 2000;
   justify-content: center;
   align-items: center;
@@ -784,16 +852,19 @@ button:active {
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
+  border: 2px solid #2a3748;
+  border-radius: 8px;
 }
 
 .image-modal-close {
   position: absolute;
-  top: 15px;
-  right: 25px;
+  top: 20px;
+  right: 30px;
   color: white;
-  font-size: 35px;
+  font-size: 40px;
   cursor: pointer;
   font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .image-modal-close:hover {
@@ -802,20 +873,23 @@ button:active {
 
 /* Status Legend */
 .status-legend {
-  background: white;
-  padding: 6px 15px;
-  margin: 5px 15px;
-  border-radius: 8px;
+  background: #151f2e;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border-radius: 10px;
   display: flex;
-  gap: 15px;
-  font-size: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  gap: 20px;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2a3748;
+  color: #e0e0e0;
+  font-weight: 500;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 6px;
 }
 
 @media (max-width: 768px) {
@@ -824,29 +898,29 @@ button:active {
   }
   
   .input-area {
-    padding: 8px 10px;
+    padding: 12px 15px;
     flex-wrap: wrap;
   }
   
   .upload-btn {
-    padding: 8px 12px;
+    padding: 10px 15px;
   }
   
   .navbar {
-    padding: 8px 12px;
+    padding: 10px 15px;
   }
   
   .categories-bar {
-    padding: 6px 12px;
+    padding: 12px 15px;
   }
   
   .navbar-left {
-    gap: 8px;
+    gap: 12px;
   }
   
   .online-indicator {
-    padding: 2px 8px;
-    font-size: 11px;
+    padding: 4px 12px;
+    font-size: 13px;
   }
   
   .username-display {
@@ -859,9 +933,14 @@ button:active {
   
   .status-legend {
     flex-wrap: wrap;
-    gap: 8px;
-    margin: 5px 10px;
-    padding: 5px 10px;
+    gap: 12px;
+    margin: 8px 12px;
+    padding: 8px 12px;
+  }
+  
+  .category-btn {
+    padding: 8px 18px;
+    font-size: 14px;
   }
 }
 </style>
@@ -870,64 +949,75 @@ button:active {
 
 <div id="auth" class="center">
   <div class="box">
-    <h2>🎮 RecRoom Cheaters Chat</h2>
+    <h2>RecRoom Forum</h2>
     <input type="text" id="username" placeholder="Username">
     <input type="password" id="password" placeholder="Password">
-    <div class="button-group">
-      <button onclick="login()">Login</button>
-      <button onclick="signup()">Sign Up</button>
+    <button class="login-btn" onclick="login()">Login</button>
+    <div class="signup-link">
+      Don't have an account? <a href="#" onclick="showSignup()">Sign up</a>
     </div>
   </div>
 </div>
 
 <div id="forum" style="display:none;">
-  <div class="navbar">
-    <div class="navbar-left">
-      <div class="navbar-brand" onclick="showCategories()">
-        🎮 RecRoom Chat Room - For Cheaters!
-        <span id="adminBadge" class="admin" style="display:none;">OWNER</span>
+  <div class="forum-container">
+    <div class="navbar">
+      <div class="navbar-left">
+        <div class="navbar-brand" onclick="showCategories()">
+          RecRoom Forum
+          <span id="adminBadge" class="admin" style="display:none;">OWNER</span>
+        </div>
+        <div class="online-indicator" id="onlineIndicator">
+          <div class="green-dot"></div>
+          <span class="online-count" id="onlineCount">0</span>
+          <span class="online-text">online</span>
+        </div>
       </div>
-      <div class="online-indicator" id="onlineIndicator">
-        <div class="green-dot"></div>
-        <span class="online-count" id="onlineCount">0</span>
-        <span class="online-text">online</span>
+      <div class="navbar-right">
+        <div class="profile-section" onclick="openProfileModal()">
+          <img id="navbarProfilePic" class="profile-pic" src="https://via.placeholder.com/35/3b6ea5/ffffff?text=?" alt="Profile" style="display: none;">
+          <div id="navbarProfilePlaceholder" class="profile-pic-placeholder">?</div>
+          <span class="username-display" id="navbarUsername"></span>
+        </div>
+        <button onclick="logout()">Logout</button>
       </div>
     </div>
-    <div class="navbar-right">
-      <div class="profile-section" onclick="openProfileModal()">
-        <img id="navbarProfilePic" class="profile-pic" src="https://via.placeholder.com/30/667eea/ffffff?text=?" alt="Profile" style="display: none;">
-        <div id="navbarProfilePlaceholder" class="profile-pic-placeholder">?</div>
-        <span class="username-display" id="navbarUsername"></span>
-      </div>
-      <button onclick="logout()">Logout</button>
+
+    <div class="categories-bar" id="categoriesBar">
+      <button class="category-btn active" onclick="selectCategory('general')">
+        <span class="emoji">📢</span> General
+        <span class="category-badge general">Chat</span>
+      </button>
+      <button class="category-btn" onclick="selectCategory('news')">
+        <span class="emoji">📰</span> News 
+        <span class="category-badge news">Owner Only</span>
+      </button>
+      <button class="category-btn" onclick="selectCategory('menus')">
+        <span class="emoji">📋</span> Menus 
+        <span class="category-badge menus">Menus</span>
+      </button>
     </div>
-  </div>
 
-  <div class="categories-bar" id="categoriesBar">
-    <button class="category-btn active" onclick="selectCategory('general')">📢 General</button>
-    <button class="category-btn" onclick="selectCategory('news')">📰 News <span class="category-badge news">Owner Only</span></button>
-    <button class="category-btn" onclick="selectCategory('menus')">📋 Menus <span class="category-badge menus">Menus</span></button>
-  </div>
+    <div id="categoryInfo" class="category-info" style="display: none;">
+      <span id="categoryInfoText"></span>
+    </div>
 
-  <div id="categoryInfo" class="category-info" style="display: none;">
-    <span id="categoryInfoText"></span>
-  </div>
+    <div class="status-legend">
+      <div class="legend-item"><span class="status-indicator status-online"></span> Online</div>
+      <div class="legend-item"><span class="status-indicator status-updating"></span> Updating/Down</div>
+      <div class="legend-item"><span class="status-indicator status-detected"></span> Detected</div>
+    </div>
 
-  <div class="status-legend">
-    <div class="legend-item"><span class="status-indicator status-online"></span> Online</div>
-    <div class="legend-item"><span class="status-indicator status-updating"></span> Updating/Down</div>
-    <div class="legend-item"><span class="status-indicator status-detected"></span> Detected</div>
-  </div>
+    <div class="messages" id="messages"></div>
 
-  <div class="messages" id="messages"></div>
-
-  <div class="input-area">
-    <input type="text" id="messageInput" placeholder="Type your message here...">
-    <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">
-      📷 Upload
-    </button>
-    <input type="file" id="imageUpload" accept="image/jpeg,image/jpg,image/png,image/gif,image/ico,image/webp" style="display: none;" onchange="uploadImage()">
-    <button onclick="sendMessage()" id="sendButton">Send</button>
+    <div class="input-area">
+      <input type="text" id="messageInput" placeholder="Type your message here...">
+      <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">
+        📷 Upload
+      </button>
+      <input type="file" id="imageUpload" accept="image/jpeg,image/jpg,image/png,image/gif,image/ico,image/webp" style="display: none;" onchange="uploadImage()">
+      <button onclick="sendMessage()" id="sendButton">Send</button>
+    </div>
   </div>
 </div>
 
@@ -935,7 +1025,7 @@ button:active {
 <div id="profileModal" class="modal">
   <div class="modal-content">
     <h3>Change Profile Picture</h3>
-    <img id="modalPreview" class="profile-preview" src="https://via.placeholder.com/90/667eea/ffffff?text=?" alt="Preview">
+    <img id="modalPreview" class="profile-preview" src="https://via.placeholder.com/100/3b6ea5/ffffff?text=?" alt="Preview">
     
     <div class="avatar-grid">
       <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=1" class="avatar-option" onclick="selectAvatar('https://api.dicebear.com/7.x/avataaars/svg?seed=1')">
@@ -948,7 +1038,7 @@ button:active {
       <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=8" class="avatar-option" onclick="selectAvatar('https://api.dicebear.com/7.x/avataaars/svg?seed=8')">
     </div>
     
-    <p style="text-align: center; color: #666; margin: 8px 0;">- OR -</p>
+    <p style="text-align: center; color: #8a9bb5; margin: 10px 0;">- OR -</p>
     
     <input type="text" id="customAvatarUrl" placeholder="Enter image URL...">
     
@@ -989,8 +1079,8 @@ let messageListeners = [];
 // User roles (special tags for specific users)
 const userRoles = {
   'owner': 'owner',
-  'Repeating': 'cheatdev', // Special tag for Repeating
-  'Repeating737': 'cheatdev', // Also for Repeating737
+  'Repeating': 'cheatdev',
+  'Repeating737': 'cheatdev',
   'cheatdev1': 'developer',
   'cheatdev2': 'developer',
   'helper1': 'helper',
@@ -1168,7 +1258,7 @@ function removeOnlinePresence() {
 // Profile Picture Functions
 window.openProfileModal = function() {
   document.getElementById('profileModal').style.display = 'flex';
-  document.getElementById('modalPreview').src = currentUserAvatar || `https://via.placeholder.com/90/667eea/ffffff?text=${currentUser?.charAt(0).toUpperCase()}`;
+  document.getElementById('modalPreview').src = currentUserAvatar || `https://via.placeholder.com/100/3b6ea5/ffffff?text=${currentUser?.charAt(0).toUpperCase()}`;
   document.getElementById('customAvatarUrl').value = '';
 }
 
@@ -1308,6 +1398,32 @@ async function handleOwnerCommand(message) {
   return false;
 }
 
+window.showSignup = function() {
+  const box = document.querySelector('.box');
+  const title = box.querySelector('h2');
+  const loginBtn = box.querySelector('.login-btn');
+  const signupLink = box.querySelector('.signup-link');
+  
+  if (title.textContent === 'RecRoom Forum') {
+    title.textContent = 'Create Account';
+    loginBtn.textContent = 'Sign Up';
+    loginBtn.setAttribute('onclick', 'signup()');
+    signupLink.innerHTML = 'Already have an account? <a href="#" onclick="showLogin()">Login</a>';
+  }
+}
+
+window.showLogin = function() {
+  const box = document.querySelector('.box');
+  const title = box.querySelector('h2');
+  const loginBtn = box.querySelector('.login-btn');
+  const signupLink = box.querySelector('.signup-link');
+  
+  title.textContent = 'RecRoom Forum';
+  loginBtn.textContent = 'Login';
+  loginBtn.setAttribute('onclick', 'login()');
+  signupLink.innerHTML = 'Don\'t have an account? <a href="#" onclick="showSignup()">Sign up</a>';
+}
+
 window.signup = async function() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -1337,6 +1453,7 @@ window.signup = async function() {
       await sendToDiscordWebhook(username, userIP, Date.now());
       
       alert("Account created successfully! You can now login.");
+      showLogin();
     } catch (error) {
       console.error('Error during signup:', error);
       alert("Error creating account. Please try again.");
