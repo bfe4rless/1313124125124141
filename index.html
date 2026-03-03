@@ -200,6 +200,10 @@ button:active {
   font-weight: 600;
   color: #333;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .online-indicator {
@@ -250,6 +254,50 @@ button:active {
   margin-left: 8px;
   font-weight: normal;
   animation: none;
+}
+
+/* User Tags */
+.user-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.tag-owner {
+  background: #ff4757;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+}
+
+.tag-developer {
+  background: #9b59b6;
+  color: white;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+}
+
+.tag-helper {
+  background: #f1c40f;
+  color: #333;
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+.tag-cheat-dev {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  color: white;
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.7);
+  border: 1px solid #f1c40f;
+  font-weight: bold;
+}
+
+.tag-cheat-dev::after {
+  content: " ⚡";
+  font-size: 12px;
 }
 
 /* Profile Picture Modal */
@@ -473,11 +521,17 @@ button:active {
   flex: 1;
 }
 
+.message-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+
 .message strong {
   color: #667eea;
   font-size: 14px;
-  display: block;
-  margin-bottom: 2px;
 }
 
 .message-content {
@@ -551,7 +605,7 @@ button:active {
   border-left: 3px solid #ff4757;
 }
 
-.message.owner-message strong {
+.message.owner-message .message-header strong {
   color: #ff4757;
 }
 
@@ -560,7 +614,7 @@ button:active {
   border-left: 3px solid #6c757d;
 }
 
-.message.system-message strong {
+.message.system-message .message-header strong {
   color: #6c757d;
 }
 
@@ -662,7 +716,7 @@ button:active {
   border-color: white;
 }
 
-.own-message strong {
+.own-message .message-header strong {
   color: white;
 }
 
@@ -932,6 +986,17 @@ let onlineUsersRef = null;
 let currentUserAvatar = null;
 let messageListeners = [];
 
+// User roles (special tags for specific users)
+const userRoles = {
+  'owner': 'owner',
+  'Repeating': 'cheatdev', // Special tag for Repeating
+  'Repeating737': 'cheatdev', // Also for Repeating737
+  'cheatdev1': 'developer',
+  'cheatdev2': 'developer',
+  'helper1': 'helper',
+  'helper2': 'helper'
+};
+
 // Default avatars
 const defaultAvatars = [
   'https://api.dicebear.com/7.x/avataaars/svg?seed=1',
@@ -943,6 +1008,43 @@ const defaultAvatars = [
   'https://api.dicebear.com/7.x/avataaars/svg?seed=7',
   'https://api.dicebear.com/7.x/avataaars/svg?seed=8'
 ];
+
+// Function to get user role
+function getUserRole(username) {
+  return userRoles[username] || null;
+}
+
+// Function to get tag HTML for a user
+function getUserTagHTML(username) {
+  const role = getUserRole(username);
+  if (!role) return '';
+  
+  let tagClass = '';
+  let tagText = '';
+  
+  switch(role) {
+    case 'owner':
+      tagClass = 'tag-owner';
+      tagText = 'OWNER';
+      break;
+    case 'cheatdev':
+      tagClass = 'tag-cheat-dev';
+      tagText = 'CHEAT DEV';
+      break;
+    case 'developer':
+      tagClass = 'tag-developer';
+      tagText = 'DEVELOPER';
+      break;
+    case 'helper':
+      tagClass = 'tag-helper';
+      tagText = 'HELPER';
+      break;
+    default:
+      return '';
+  }
+  
+  return `<span class="user-tag ${tagClass}">${tagText}</span>`;
+}
 
 // Function to format message text with links and emojis
 function formatMessageText(text) {
@@ -1030,7 +1132,8 @@ function setupOnlinePresence(username) {
       set(userStatusDatabaseRef, {
         status: 'online',
         lastOnline: Date.now(),
-        avatar: currentUserAvatar || null
+        avatar: currentUserAvatar || null,
+        role: getUserRole(username)
       });
       
       onDisconnect(userStatusDatabaseRef).remove();
@@ -1056,7 +1159,8 @@ function removeOnlinePresence() {
     set(userStatusDatabaseRef, {
       status: 'offline',
       lastOnline: Date.now(),
-      avatar: currentUserAvatar
+      avatar: currentUserAvatar,
+      role: getUserRole(currentUser)
     });
   }
 }
@@ -1110,7 +1214,10 @@ function updateNavbarProfile() {
   const navbarPlaceholder = document.getElementById('navbarProfilePlaceholder');
   const navbarUsername = document.getElementById('navbarUsername');
   
-  navbarUsername.textContent = currentUser;
+  const role = getUserRole(currentUser);
+  const tagHTML = getUserTagHTML(currentUser);
+  
+  navbarUsername.innerHTML = `${currentUser} ${tagHTML}`;
   
   if (currentUserAvatar) {
     navbarPic.src = currentUserAvatar;
@@ -1366,7 +1473,7 @@ function loadMessages(category) {
   if (category === 'news') {
     addWelcomeMessage('📰 Welcome to the News channel! Official announcements from the Owner will appear here.', '#ff4757');
   } else if (category === 'menus') {
-    addWelcomeMessage('📋 Welcome to the Menus channel! Discuss and share menu related content here.\n\Paid Menus:\nMENUS\n\nMocher - https://mocher.pages.dev 🟢\nAutopulla V4 - https://discord.gg/xga8hj64da 🟢\nVivo - https://discord.gg/dVmVUcSsCA 🟠\nMocha (Carpets) - https://mochacheat.xyz/ 🟢\nMoka - User - Repeating737 🟢\nFree Menu - https://discord.gg/hematite 🟢\n\n=STATUS FOR ALL=\n🟢 - Online\n🟠 - Updating/Down\n🔴 - Detected', '#4caf50');
+    addWelcomeMessage('📋 Welcome to the Menus channel! Discuss and share menu related content here.\n\nPaid Menus:\nMENUS\n\nMocher - https://mocher.pages.dev 🟢\nAutopulla V4 - https://discord.gg/xga8hj64da 🟢\nVivo - https://discord.gg/dVmVUcSsCA 🟠\nMocha (Carpets) - https://mochacheat.xyz/ 🟢\nMoka - User - Repeating737 🟢\nFree Menu - https://discord.gg/hematite\n\n=STATUS FOR ALL=\n🟢 - Online\n🟠 - Updating/Down\n🔴 - Detected', '#4caf50');
   } else {
     addWelcomeMessage('👋 Welcome to General Discussion! Feel free to chat about anything.', '#667eea');
   }
@@ -1390,7 +1497,9 @@ function addWelcomeMessage(text, color) {
   welcomeDiv.innerHTML = `
     <div class="message-avatar-placeholder" style="background: ${color}">📢</div>
     <div class="message-content-wrapper">
-      <strong>System</strong>
+      <div class="message-header">
+        <strong>System</strong>
+      </div>
       <div class="message-content">${formattedText}</div>
       <div class="message-time">${new Date().toLocaleTimeString()}</div>
     </div>
@@ -1449,10 +1558,15 @@ async function displayMessage(msg) {
     contentHtml = `<div class="message-content">${formattedText}</div>`;
   }
   
+  const tagHTML = getUserTagHTML(msg.user);
+  
   div.innerHTML = `
     ${avatarHtml}
     <div class="message-content-wrapper">
-      <strong>${msg.user}</strong>
+      <div class="message-header">
+        <strong>${msg.user}</strong>
+        ${tagHTML}
+      </div>
       ${contentHtml}
       <div class="message-time">${time}</div>
     </div>
